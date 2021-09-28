@@ -8,6 +8,8 @@ fun addition (num1:Int,num2:Int):Int {
     return num1+num2
 }
 
+infix fun Unit.sq(n: Int) = n * n
+
 fun rttp (): Unit {
     println("Just call")
 }
@@ -21,6 +23,9 @@ fun defaultValues( // indentation would be like this
     return "Num1 = ${num1}, Num2 = ${num2}"
 }
 
+fun multiple(vararg strs:String) {
+    println(strs.contentToString())
+}
 
 fun main() {
     val dt = simple()
@@ -34,4 +39,12 @@ fun main() {
     println("defaultValues(89, 56) ${defaultValues(89, 56)}")
     println("defaultValues(num2 = 4555, num1 = 10) ${defaultValues(num2 = 4555, num1 = 10)}") // named parameters
     println("defaultValues(num2 = 878) ${defaultValues(num2 = 878)}")
+
+    println(" Square is ${Unit sq 2}")
+    println(" Square is ${Unit.sq(2)}")
+
+    multiple("one")
+    multiple("one", "two")
+    multiple("one", "two", "three")
+    multiple("one", "two", "three", "four")
 }
